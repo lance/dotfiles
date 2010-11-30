@@ -1,0 +1,16 @@
+Host ci
+Host production
+Host shovelpunks
+Host shovelpunks.com
+Host production.shovelpunks.com
+Hostname 67.207.147.227
+
+Host shovelpunks.com
+Host *.shovelpunks.com
+User lance
+
+Host *
+ForwardAgent yes
+ForwardX11 no
+Compression yes
+

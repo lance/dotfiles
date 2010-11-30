@@ -1,0 +1,15 @@
+# Git aliases for bash
+# Put in ~/.bash_profile
+
+alias gst='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff | mate'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch'
+alias gba='git branch -a'
+
+alias mate='open -a /Applications/TextMate.app'
+alias print='enscript --color=blackwhite -E -T4 -M Letterdj -C -2 -fCourier@5/5 -r $*'
+
