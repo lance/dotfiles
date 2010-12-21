@@ -28,3 +28,7 @@ set ch=2 " make command taller
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert
 mode
 map <Enter> o<ESC>
+
+" git-vim
+set laststatus=2
+set statusline=%{GitBranch()}
