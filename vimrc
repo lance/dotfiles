@@ -18,6 +18,7 @@ colorscheme ir_black
 syntax on
 set hlsearch
 
+
 " status line
 set showcmd
 set ruler
