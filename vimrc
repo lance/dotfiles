@@ -44,7 +44,7 @@ endfunction
 
 " NERDTree config
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>tb :cd ~/src/torquebox/torquebox<CR> :NERDTreeToggle<CR>
+map <Leader>tb :cd /Users/lanceball/src/torquebox/torquebox<CR><Leader>n
 
 " file types that are ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
