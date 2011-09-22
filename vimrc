@@ -69,6 +69,9 @@ set ch=2 " make command taller
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
 
+" auto-wrap single line of text to 72 cols with ==
+map == <S-V>gq
+
 " Other key mappings
 " *************************************************************
 "
