@@ -44,6 +44,7 @@ endfunction
 
 " NERDTree config
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>tb :!cd ~/src/torquebox/torquebox<CR> :NERDTreeToggle<CR>
 
 " file types that are ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
@@ -73,6 +74,7 @@ map <Enter> o<ESC>
 " according to bobmcw it's reminiscent of elvis and 
 " he loves it, and really I just want to make him happy
 map == <S-V>gq
+map === vapgq
 
 " Other key mappings
 " *************************************************************
