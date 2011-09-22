@@ -70,6 +70,8 @@ map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
 
 " auto-wrap single line of text to 72 cols with ==
+" according to bobmcw it's reminiscent of elvis and 
+" he loves it, and really I just want to make him happy
 map == <S-V>gq
 
 " Other key mappings
