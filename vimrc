@@ -6,6 +6,20 @@ set smartindent
 set autoindent
 set expandtab
 
+" Code folding
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+" Setting scrolloff to a large number keeps the cursor
+" in the middle of the screen when moving up and down in
+" a file.
+set scrolloff=9999
+" set scrolloff=5
+" Setting scrolloff to a small number like 5 makes the 
+" screen begin scrolling 5 (for example) lines before
+" the bottom
 set ruler
 
 " Searching behavior
@@ -44,11 +58,15 @@ endfunction
 
 " NERDTree config
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>tb :cd /Users/lanceball/src/torquebox/torquebox<CR><Leader>n
+
+" Shortcut command to move to the torquebox source root and toggle NERDTree
+map <silent><Leader>tb :cd /Users/lanceball/src/torquebox/torquebox<CR><Leader>n
+
+map <Leader>P :Preview<CR>
 
 " file types that are ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+"au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
@@ -85,6 +103,9 @@ map <Leader>b :FufBuffer<Enter>
 " Go to the top of the file
 map <Leader>tt :0<Enter>
 
+" Go to the file and line number specified on the current line
+map gtl <C-W>g<S-F>
+
 " requires git-vim plugin
 set laststatus=2
 set statusline=%{GitBranch()}
@@ -93,19 +114,21 @@ nnoremap <Space> <PageDown>
 
 " Common code snippits. Just trying these out to see how I do with macros
 " Add a new function
-iab def def func<CR><CR>end<ESC>k
+" iab def def func<CR><CR>end<ESC>k
 
 " add a new scenario
-iab desc describe "a scenario" do<CR><CR>  it "should do something" do<CR><CR>end<CR><CR>end<ESC>0dw6k2w
+" iab desc describe "a scenario" do<CR><CR>  it "should do something" do<CR><CR>end<CR><CR>end<ESC>0dw6k2w
 
 " colors
 syntax on
-set background=dark
-if has("gui_macvim")
-  set background=light
-  colorscheme solarized
-else
+"colorscheme blue
+"set background=dark
+"if has("gui_macvim")
+"  set background=light
+"  colorscheme solarized
+"else
   set background=dark
-end
+  colorscheme desert
+"end
 
 

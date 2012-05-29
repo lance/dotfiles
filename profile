@@ -1,6 +1,5 @@
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home/
 export MAVEN_OPTS="-Xmx512m"
-export EDITOR=vim  # if you like things like git commit editors to appear in the terminal
+export EDITOR=vi  # if you like things like git commit editors to appear in the terminal
 #export EDITOR=mvim # if you like things like git commit editors to appear in MacVim
 export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=1
@@ -8,6 +7,10 @@ export CLICOLOR=1
 # Make the command line act live vi
 set -o vi
 
+
+if [[ -f "$HOME/.java.env" ]]; then
+  source "$HOME/.java.env";
+fi
 
 if [[ -f "$HOME/.aliases.bash" ]]; then
   source "$HOME/.aliases.bash";

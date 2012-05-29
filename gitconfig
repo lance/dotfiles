@@ -1,6 +1,6 @@
 [user]
-	name = Lance
-	email = lance@shovelpunks.com
+	name = Lance Ball
+	email = lball@redhat.com
 [color]
 	diff = auto
 	status = auto
@@ -24,7 +24,9 @@
 
 [github]
 	user = lance
-	token = SOMETHINGUNGUESSABLE
+	token = b5c586038f72472b61ef222b4a009c11
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  frebase = !git fetch && git rebase origin
+  which-branch = !git rev-parse --symbolic-full-name --abbrev-ref $1
+[core]
+	excludesfile = /Users/lanceball/.gitignore

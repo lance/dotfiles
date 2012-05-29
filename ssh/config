@@ -1,13 +1,50 @@
+#Host github.com
+#Hostname github.com
+#IdentityFile /Users/lanceball/.ssh/id_dsa_github_init
+
+Host rht-ec2
+Hostname 184.73.253.118
+User root
+
+Host staging.asap
+Hostname 66.228.58.147
+User root
+
+Host jboss-contegix
+Hostname redhat-jboss01.managed.contegix.com
+User lball
+
+
+Host snaps
+Hostname snaps.lanceball.com
+User lance
+
+
 Host ci
 Host production
 Host shovelpunks
 Host shovelpunks.com
 Host production.shovelpunks.com
-Hostname 67.207.147.227
+Hostname 67.207.141.15
 
 Host shovelpunks.com
 Host *.shovelpunks.com
 User lance
+
+Host *.compute-1.amazonaws.com
+User ec2-user
+IdentityFile /Users/lanceball/src/oddthesis-private/ec2/default.pem
+
+Host heroku.com
+IdentityFile /Users/lanceball/.ssh/heroku_key
+
+Host boxgrinder.local
+User root
+#IdentityFile /Users/lanceball/Dev/RHT/amazon/default.pem
+
+Host chirpr.torquebox.org
+User ec2-user
+IdentityFile /Users/lanceball/src/oddthesis-private/ec2/default.pem
 
 Host *
 ForwardAgent yes
