@@ -1,10 +1,8 @@
 export MAVEN_OPTS="-Xmx512m"
-export EDITOR=vi  # if you like things like git commit editors to appear in the terminal
-#export EDITOR=mvim # if you like things like git commit editors to appear in MacVim
+export EDITOR=vi  
 export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=1
 
-# Make the command line act live vi
 set -o vi
 
 
@@ -12,21 +10,13 @@ if [[ -f "$HOME/.java.env" ]]; then
   source "$HOME/.java.env";
 fi
 
-if [[ -f "$HOME/.aliases.bash" ]]; then
-  source "$HOME/.aliases.bash";
+if [[ -f "$HOME/.aliases" ]]; then
+  source "$HOME/.aliases";
 fi
 
 if [[ -f "$HOME/.bash_prompt" ]]; then
   source "$HOME/.bash_prompt";
 fi
-
-if [[ -f "$HOME/.amazon_keys" ]]; then
-  source "$HOME/.amazon_keys";
-fi
-
-# Let RVM handle this now
-#export RUBY_HOME=/opt/local/lib/ruby
-#export GEM_HOME=$RUBY_HOME/lib/ruby/gems/1.8
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 

@@ -1,8 +1,3 @@
-export JPY=~/bin/srcipts/j.py # tells j.sh where the python script is
-. ~/bin/scripts/j.sh          # provides the j() function
-alias jl='j -l'
-alias jt='j -t recent'
-alias jr='j -t rank'
 
 __parse_git_dirty () {
    git status 2> /dev/null | tail -n1 | egrep -q '^nothing to commit \(working directory clean\)$' || echo '*'
@@ -26,51 +21,7 @@ function __git_prompt {
 
 
 function bash_prompt {
-    local NONE="\e[0m"    # unsets color to term's fg color
-    
-    #fg colors
-    local K="\e[0;30m"    # black
-    local R="\e[0;31m"    # red
-    local G="\e[0;32m"    # green
-    local Y="\e[0;33m"    # yellow
-    local B="\e[0;34m"    # blue
-    local M="\e[0;35m"    # magenta
-    local C="\e[0;36m"    # cyan
-    local W="\e[0;37m"    # white
-
-    # emphasized (bolded) colors
-    local EMK="\e[1;30m"
-    local EMR="\e[1;31m"
-    local EMG="\e[1;32m"
-    local EMY="\e[1;33m"
-    local EMB="\e[1;34m"
-    local EMM="\e[1;35m"
-    local EMC="\e[1;36m"
-    local EMW="\e[1;37m"
-
-    # background colors
-    local BGK="\e[40m"
-    local BGR="\e[41m"
-    local BGG="\e[42m"
-    local BGY="\e[43m"
-    local BGB="\e[44m"
-    local BGM="\e[45m"
-    local BGC="\e[46m"
-    local BGW="\e[47m"
-
-    # color on color
-    local KOW="\e[1;30;47m"
-    local WOB="\e[0;37;44m"
-    local WOR="\e[0;37;41m"
-
-    [ $UID -eq "0" ] && local U="$WOR \u "
-
-    #PS1="\n$KOW\w$NONE $KOW\$(__git_prompt)$K \$(__rvm_prompt)$NONE \n $ "
-    #PS1='\n\e[1;33m# ==============================================================================\n#\e[0m \e[1;37m\u@\h\e[0m \e[1;30;47m\w\e[0m \e[1;37;44m$(__parse_git_branch)\e[0m\n\e[1;33m#\e[0m '
-    PS1='\n\e[1;33m# ==============================================================================\n#\e[0m \e[1;37m\h\e[0m \e[1;30;47m\w\e[0m \e[1;37;44m$(__git_prompt)\e[0m\n\e[1;37m$\e[0m '
-    #PS1='\n\e[1;33m>>\e[0m \e[0;37m\u @ \h\e[0m \e[0;30;47m\w\e[0m \e[0;37;44m$(__parse_git_branch)\e[0m\n\e[0;33m  >>\e[0m '
-    #PS1='\n\e[1;33m>>\e[0m \e[0;37m\u @ \h\e[0m \e[0;30;47m\w\e[0m \e[0;37;44m$(__parse_git_branch)\e[0m \e[1;33m<< \e[0m\n $ '
-
+    PS1='$(__parse_git_branch)$ '
 }
 
 bash_prompt
