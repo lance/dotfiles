@@ -10,8 +10,8 @@ if [[ -f "$HOME/.java.env" ]]; then
   source "$HOME/.java.env";
 fi
 
-if [[ -f "$HOME/.aliases" ]]; then
-  source "$HOME/.aliases";
+if [[ -f "$HOME/.aliases.bash" ]]; then
+  source "$HOME/.aliases.bash";
 fi
 
 if [[ -f "$HOME/.bash_prompt" ]]; then
