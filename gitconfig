@@ -24,7 +24,7 @@
 
 [github]
 	user = lance
-	token = b5c586038f72472b61ef222b4a009c11
+	token = AINTNOTHINGBUTATHANG
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   which-branch = !git rev-parse --symbolic-full-name --abbrev-ref $1
