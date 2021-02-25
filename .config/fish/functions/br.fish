@@ -1,0 +1,1 @@
+/home/lanceball/.local/share/broot/launcher/fish/br.fish

@@ -1,0 +1,29 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Lance Ball
+	email = lball@redhat.com
+
+[color]
+	ui = true
+
+[grep]
+	linenumber = true
+
+[commit]
+	gpgsign = true
+
+[format]
+	signoff = true
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	d = diff -- . ':(exclude)**/package-lock.json'
+
+[core]
+	editor = code --wait
+	whitespace = fix
+

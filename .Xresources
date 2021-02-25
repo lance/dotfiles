@@ -1,0 +1,58 @@
+! Base16 Oliveira
+! Scheme: Protesilaos Stavrou (http://www.protesilaos.com)
+
+URxvt*background:                     #1A2217
+URxvt*foreground:                     #6A7167
+URxvt*cursorColor:                    #6A7167
+
+URxvt*scrollColor:                    #6A7167
+URxvt*highlightColor:                 #374934
+URxvt*highlightTextColor:             #8A9187
+
+URxvt*color0:                         #1A2217
+URxvt*color1:                         #A64E3C
+URxvt*color2:                         #477E44
+URxvt*color3:                         #A59520
+URxvt*color4:                         #107595
+URxvt*color5:                         #6C85b7
+URxvt*color6:                         #5CA090
+URxvt*color7:                         #6A7167
+URxvt*color8:                         #778974
+URxvt*color9:                         #A64E3C
+URxvt*color10:                        #477E44
+URxvt*color11:                        #A59520
+URxvt*color12:                        #107595
+URxvt*color13:                        #6C85b7
+URxvt*color14:                        #5CA090
+URxvt*color15:                        #F7F9F4
+
+URxvt*color16:                        #A35C35
+URxvt*color17:                        #A95F85
+URxvt*color18:                        #2A3227
+URxvt*color19:                        #374934
+URxvt*color20:                        #8A9187
+URxvt*color21:                        #E7E9E4
+
+URxvt.perl-ext-common: selection-to-clipboard,default,matcher,fullscreen,resize-font
+
+! Enable fullscreen
+! TODO: This is not working
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! Change font sizes
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Set the font
+URxvt.font: xft:SauceCodePro Nerd Font Mono:style=Regular:pixelsize=22
+
+! Remove hideous scrollbar
+URxvt.scrollBar: false
+
+! Open URLs in terminal
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.transparent:   true
+URxvt.shading:       15
+
