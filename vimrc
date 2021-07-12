@@ -3,21 +3,34 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-
+" Syntax highlighting
 Plug 'sheerun/vim-polyglot'
-Plug 'denseanalysis/ale'
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+" JavaScript linting
+Plug 'dense-analysis/ale'
+
+" Git integration
+Plug 'tpope/vim-fugitive'
+
+" Code completion
+" TODO: Fix this
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Text alignment
 Plug 'junegunn/vim-easy-align'
 
-" Any valid git URL is allowed
+" Status bar
+Plug 'itchyny/lightline.vim'
+
+" GitHub dashboard
+" TODO: Why don't links work?
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-" On-demand loading
+Plug 'preservim/nerdcommenter' 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
@@ -33,9 +46,74 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
+" Buffer management
+Plug 'jeetsukumaran/vim-buffergator'
 
 " Initialize plugin system
 call plug#end()
+
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Lightline config
+set laststatus=2
+let g:lightline = { 
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+			\ }
+
+filetype plugin on
+
+" Automatically write when changing buffers
+set autowrite
+
+" Auto-reload files when they have changed
+set autoread
+
+" default mapleader=\ but that's awkward, use comma
+let mapleader = ','
+let g:mapleader = ','
+
+" NERDTree config
+map <Leader>n :NERDTreeToggle<CR>
+
+" misc stuff
+set backspace=start,indent
+set number
+
+" Insert New Line
+" *************************************************************
+map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
+map <Enter> o<ESC>
+
+" auto-wrap single line of text to 72 cols with ==
+" according to bobmcw it's reminiscent of elvis and
+" he loves it, and really I just want to make him happy
+map == <S-V>gq
+map === vapgq
+
+" tabs and indents
+set tabstop=2
+set smarttab
+set shiftwidth=2
+set smartindent
+set autoindent
+set expandtab
+
+" Searching behavior
+set incsearch     " incremental search
+set ignorecase    " ignore case in searches
+set smartcase     " except when the search string includes uppercase
 

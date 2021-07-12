@@ -1,41 +1,37 @@
-/*Lance's theme based on the olivera theme*/
+/*Dracula theme based on the Purple official rofi theme*/
 
 * {
-    font: "OverpassMono 16";
-    foreground: #e7e9e4;
-    background-color: transparent;
-    active-background: #1a2217aa;
-    active-foreground: #6C85b7;
-    urgent-background: #1a221780;
+    font: "Inconsolata 18";
+    foreground: #f8f8f2;
+    background-color: #282a36;
+    active-background: #dddddd;
+    urgent-background: #ff5555;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: #6a716780;
+    bordercolor: @active-background;
 }
 
-window {
-    width: 440px;
-    background-color: @active-background;
-    text-color: @foreground;
+#window {
+    background-color: @background;
     border:           1;
     border-radius: 6;
     border-color: @bordercolor;
-    padding:          25;
+    padding:          5;
 }
-mainbox {
-    children: [inputbar, message, listview];
+#mainbox {
+    children: [inputbar, message, mode-switcher, listview];
     border:  0;
     padding: 0;
 }
-
 #message {
     border:       1px dash 0px 0px ;
     border-color: @separatorcolor;
     padding:      1px ;
 }
 #textbox {
-    text-color: @active-foreground;
+    text-color: @foreground;
 }
 #listview {
     fixed-height: 0;
@@ -44,15 +40,14 @@ mainbox {
     spacing:      2px ;
     scrollbar:    false;
     padding:      2px 0px 0px ;
+    background-color: @active-background;
 }
 #element {
     border:  0;
     padding: 1px ;
 }
-#element normal {
-	background-color: transparent;
-}
 #element.normal.normal {
+    background-color: @background;
     text-color:       @foreground;
 }
 #element.normal.urgent {
@@ -61,11 +56,11 @@ mainbox {
 }
 #element.normal.active {
     background-color: @active-background;
-    text-color:       @active-foreground;
+    text-color:       @foreground;
 }
 #element.selected.normal {
     background-color: @selected-background;
-    text-color:       @active-foreground;
+    text-color:       @foreground;
 }
 #element.selected.urgent {
     background-color: @selected-urgent-background;
@@ -103,7 +98,7 @@ mainbox {
 }
 #inputbar {
     spacing:    0;
-    text-color: @active-foreground;
+    text-color: @foreground;
     padding:    1px ;
 }
 #case-indicator {
@@ -120,7 +115,6 @@ mainbox {
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
-    text-color: @active-foreground;
 }
 #textbox-prompt-colon {
     expand:     false;
@@ -128,3 +122,4 @@ mainbox {
     margin:     0px 0.3em 0em 0em ;
     text-color: @foreground;
 }
+@import "/usr/share/rofi/themes/glue_pro_blue.rasi"
